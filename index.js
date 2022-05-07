@@ -14,14 +14,9 @@ mongoose.connect(process.env.MONGO_URL, () => {
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
+const userRoute = require("./routes/users");
 
-app.get("/", (req, res) => {
-	res.send("welcome to home page");
-});
-
-app.get("/users", (req, res) => {
-	res.send("welcome to users");
-});
+app.use("/api/users", userRoute);
 
 app.listen(8800, () => {
 	console.log("Backend server is running");
