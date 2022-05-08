@@ -1,1 +1,1 @@
-# social-media-app
+# Node.js Social Media REST API with MongoDb
